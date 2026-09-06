@@ -1,49 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Angkor &amp; Angkor — Bientôt</title>
-<meta name="description" content="Angkor &amp; Angkor, restaurant de spécialités khmères. Bientôt." />
-<link rel="icon" type="image/png" href="logo.svg" />
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
-<style>
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    min-height:100svh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#faf8f4;
-    color:#2b2b2b;
-    font-family:'EB Garamond', serif;
-    text-align:center;
-    padding:24px;
-  }
-  main{max-width:360px;}
-  img{
-    width:300px;
-    max-width:70vw;
-    height:auto;
-    margin-bottom:0px;
-  }
-  p{
-    font-style:italic;
-    font-size:24px;
-    letter-spacing:0.02em;
-    color:#4d4a4c;
-    margin:0;
-  }
-  @media (max-width:420px){
-    p{font-size:18px;}
-  }
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angkor & Angkor — Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <img src="logo.svg" alt="Angkor &amp; Angkor — spécialités khmères" />
-    <p>Notre site est en cours de construction.</p>
-  </main>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <img class="brand-logo" src="img/logo.svg" alt="Logo Angkor &amp; Angkor">
+    <div class="brand">
+      <span class="brand-name">Angkor & Angkor</span>
+      <span class="brand-tag">Spécialités Khmères</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= PAGE D'ACCUEIL : CATEGORIES ================= -->
+<main id="view-home" class="view">
+  <section class="hero">
+    <h1>Notre carte</h1>
+    <p>Choisissez une catégorie pour découvrir nos plats</p>
+  </section>
+
+  <section class="categories">
+    <button class="cat-card" data-cat="entrees">
+      <span class="cat-icon">🥟</span>
+      <span class="cat-name">Entrées</span>
+      <span class="cat-count"></span>
+    </button>
+    <button class="cat-card" data-cat="specialites">
+      <span class="cat-icon">🍲</span>
+      <span class="cat-name">Spécialités</span>
+      <span class="cat-count"></span>
+    </button>
+    <button class="cat-card" data-cat="plats">
+      <span class="cat-icon">🍛</span>
+      <span class="cat-name">Plats</span>
+      <span class="cat-count"></span>
+    </button>
+    <button class="cat-card" data-cat="assiettes">
+      <span class="cat-icon">🍽️</span>
+      <span class="cat-name">Assiettes</span>
+      <span class="cat-count"></span>
+    </button>
+    <button class="cat-card" data-cat="accompagnements">
+      <span class="cat-icon">🍚</span>
+      <span class="cat-name">Accompagnements</span>
+      <span class="cat-count"></span>
+    </button>
+    <button class="cat-card" data-cat="desserts">
+      <span class="cat-icon">🍧</span>
+      <span class="cat-name">Desserts</span>
+      <span class="cat-count"></span>
+    </button>
+  </section>
+
+  <footer class="restaurant-info">
+    <p class="addr">📍 128 avenue du Maine, 75014 Paris</p>
+    <p class="tel">📞 01 42 78 03 51</p>
+  </footer>
+</main>
+
+<!-- ================= PAGE CATEGORIE (contenu injecté par JS) ================= -->
+<main id="view-category" class="view" hidden>
+  <div class="cat-header">
+    <button id="back-btn" class="back-btn">← Retour</button>
+    <h1 id="cat-title"></h1>
+  </div>
+  <div id="dish-list" class="dish-list"></div>
+</main>
+
+<script src="menu-data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
